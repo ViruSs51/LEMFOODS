@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="icon" type="image/svg" href="{{ url_for('static', filename='main/img/logo_lem_foods.svg') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/main_styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/main.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <header class="header">
+                {% include "main/component/hotbar.html" %} 
+                {% block header %}{% endblock header %}
+            </header>
+            <div class="content">
+                {% block content %}{% endblock content %}
+            </div>    
+            <footer class="footer">
+                {% block footer %}{% endblock footer %}
+                <div class="footer__row">
+                    <div class="footer__column">
+                        <h2 class="footer__list-title big">Подписывайтесь на нас</h2>
+                        <div class="footer__social-media">
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='main/img/fb.svg') }}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='main/img/instagram.svg') }}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='main/img/youtube.svg') }}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='main/img/tiktok.svg') }}" alt="">
+                            </a>
+                        </div>
+                        <p class="footer__description p">Подпишитесь на наши социальные сети и узнавайте первыми о лучших предложениях!</p>
+                    </div>
+                    <div class="footer__column">
+                        <h2 class="footer__list-title big">Lem Foods</h2>
+                        <div class="footer__list">
+                            <a class="p" href="#">Местные Товары</a>
+                            <a class="p" href="#">О нас</a>
+                            <a class="p" href="#">Новости</a>
+                            <a class="p" href="#">Контакты</a>
+                        </div>
+                    </div>
+                    <div class="footer__column">
+                        <h2 class="footer__list-title big">Страницы</h2>
+                        <div class="footer__list">
+                            <a class="p" href="#">Вакансии</a>
+                            <a class="p" href="#">Политика конфиденциальности</a>
+                            <a class="p" href="#">Условия и положения</a>
+                            <a class="p" href="#">Политика cookies</a>
+                        </div>
+                    </div>
+                    <div class="footer__column">
+                        <h2 class="footer__list-title big">Контакты</h2>
+                        <div class="footer__list">
+                            <a class="p" href="#">+373 (22) 89-09-30</a>
+                            <a class="p" href="#">Кишинэу, шос. Мунчешть, 121</a>
+                            <a class="p" href="#">relatiiclienti@linella.md</a>
+                            <a class="p" href="#">+373 22 89 09 27</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__row">
+                    <p class="footer__copyright p">Все права защищены Lem Foods &copy 2025</p>
+                    <a class="footer__developed p" href="#">Разработка сайта - it4world.md</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
