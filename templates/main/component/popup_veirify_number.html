@@ -1,0 +1,32 @@
+<div class="{% if not_popup %}not-popup{% endif %} popup" id="{% if not not_popup %}popup{% endif %}">
+    <a class="popup__close-button" href="{% if not_popup %}/{% else %}#{% endif %}" onclick="closeLoginWindow()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 0.999999 12C0.999999 5.92487 5.92487 1 12 1ZM12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM17 11L10.4142 11L12.7071 8.70711L11.2929 7.29289L6.58579 12L11.2929 16.7071L12.7071 15.2929L10.4142 13L17 13L17 11Z"></path>
+        </svg>
+        <p class="p">Вернуться на главную</p>
+    </a>
+    <form class="popup__verify-window" action="/auth" method="POST">
+        <div class="popup__title">
+            <img src="{{ url_for('static', filename='main/img/logo_lem_foods.svg') }}" alt="">
+        </div>
+        <div class="popup__form">
+            <h2 class="popup__form-title big">Подтвердить номер</h2>
+            <div class="popup__section">
+                <label for="verify-code" class="p">Код подтверждения</label>
+                <div class="popup__input">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                        <g fill="#64696c" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M24,4c-4.40058,0 -8,3.59941 -8,8v4h-3.5c-2.4675,0 -4.5,2.0325 -4.5,4.5v19c0,2.4675 2.0325,4.5 4.5,4.5h23c2.4675,0 4.5,-2.0325 4.5,-4.5v-19c0,-2.4675 -2.0325,-4.5 -4.5,-4.5h-3.5v-4c0,-4.40059 -3.59942,-8 -8,-8zM24,7c2.77942,0 5,2.22058 5,5v4h-10v-4c0,-2.77941 2.22058,-5 5,-5zM12.5,19h23c0.8465,0 1.5,0.6535 1.5,1.5v19c0,0.8465 -0.6535,1.5 -1.5,1.5h-23c-0.8465,0 -1.5,-0.6535 -1.5,-1.5v-19c0,-0.8465 0.6535,-1.5 1.5,-1.5zM24,27c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z"></path></g></g>
+                    </svg>
+                    <input required class="p" type="number" placeholder="000000" id="verify-code" name="verify-code">
+                </div>
+            </div>
+            <nav class="popup__nav">
+                <button type="submit">Подтвердить</button>
+            </nav>
+        </div>
+    </form>
+    <div class="popup__signup">
+        <p class="p">Нет аккаунта?</p>
+        <a href="/signup">Зарегистрируйте новый аккаунт</a>
+    </div>
+</div>

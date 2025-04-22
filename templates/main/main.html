@@ -73,7 +73,11 @@
                     <a class="footer__developed p" href="#">Разработка сайта - it4world.md</a>
                 </div>
             </footer>
+            {% include "main/component/popup_login.html" %} 
+            {% include "main/component/popup_error.html" %} 
         </div>
     </div>
+    <script src="{{ url_for('static', filename='main/js/ui.js') }}"></script>
+    <script src="{{ url_for('static', filename='main/js/auth.js') }}"></script>
 </body>
 </html>

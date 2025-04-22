@@ -1,0 +1,83 @@
+{% extends "main/main.html" %}
+
+{% block title %}Профиль{% endblock title %}
+
+{% block content %}
+    <div class="profile-header">
+        <p class="profile-header__path p"><a href="/">Главная</a> > Личный кабинет</p>
+        <h2 class="very-big">Личный кабинет</h2>
+        <div class="profile-header__row">
+            <div class="profile-header__section-list">
+                <a href="#" class="button-section-data medium selected">Личные данные</a>
+                <a href="#" class="button-section-favorite medium">Избранные</a>
+                <a href="#" class="button-section-bought medium">Список покупок</a>
+            </div>
+            <a class="button-logout" href="/logout">Выйти</a>
+        </div>
+    </div>
+    <form action="#" method="POST" class="profile-data">
+        <div class="profile-data__section-data">
+            <div class="popup__section">
+                <label for="first-name" class="p">Имя</label>
+                <div class="popup__input">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11 22C4.92487 22 0 17.0751 0 11C0 4.92487 4.92487 0 11 0C17.0751 0 22 4.92487 22 11C22 17.0751 17.0751 22 11 22ZM18.3995 16.1246C19.4086 14.6703 20 12.9042 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 12.9042 2.59138 14.6703 3.6005 16.1246C4.72595 14.6381 7.3706 14 11 14C14.6294 14 17.274 14.6381 18.3995 16.1246ZM16.9647 17.7398C16.672 16.6874 14.5694 16 11 16C7.43062 16 5.328 16.6874 5.03532 17.7398C6.6233 19.1462 8.71194 20 11 20C13.2881 20 15.3767 19.1462 16.9647 17.7398ZM11 14C8.76086 14 7 12.4274 7 9C7 6.75576 8.5791 5 11 5C13.4142 5 15 6.92158 15 9.2C15 12.4796 13.2181 14 11 14ZM9 9C9 11.2693 9.81821 12 11 12C12.1777 12 13 11.2984 13 9.2C13 7.95042 12.2157 7 11 7C9.73374 7 9 7.81582 9 9Z" fill="#64696C"></path>
+                    </svg>
+                    <input value="{{ user.first_name}}" required class="p" type="text" placeholder="Nume" id="fist-name" name="fist-name">
+                </div>
+            </div>
+            <div class="popup__section">
+                <label for="last-name" class="p">Фамилия</label>
+                <div class="popup__input">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11 22C4.92487 22 0 17.0751 0 11C0 4.92487 4.92487 0 11 0C17.0751 0 22 4.92487 22 11C22 17.0751 17.0751 22 11 22ZM18.3995 16.1246C19.4086 14.6703 20 12.9042 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 12.9042 2.59138 14.6703 3.6005 16.1246C4.72595 14.6381 7.3706 14 11 14C14.6294 14 17.274 14.6381 18.3995 16.1246ZM16.9647 17.7398C16.672 16.6874 14.5694 16 11 16C7.43062 16 5.328 16.6874 5.03532 17.7398C6.6233 19.1462 8.71194 20 11 20C13.2881 20 15.3767 19.1462 16.9647 17.7398ZM11 14C8.76086 14 7 12.4274 7 9C7 6.75576 8.5791 5 11 5C13.4142 5 15 6.92158 15 9.2C15 12.4796 13.2181 14 11 14ZM9 9C9 11.2693 9.81821 12 11 12C12.1777 12 13 11.2984 13 9.2C13 7.95042 12.2157 7 11 7C9.73374 7 9 7.81582 9 9Z" fill="#64696C"></path>
+                    </svg>
+                    <input value="{{ user.last_name }}" required class="p" type="text" placeholder="Prenume" id="last-name" name="last-name">
+                </div>
+            </div>
+            <div class="popup__section">
+                <label for="email" class="p">Email</label>
+                <div class="popup__input">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.5">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3 3H21C22.1046 3 23 3.89543 23 5V19C23 20.1046 22.1046 21 21 21H3C1.89543 21 1 20.1046 1 19V5C1 3.89543 1.89543 3 3 3ZM3 9.61811V19H21V9.61853L12 14.1185L3 9.61811ZM3 7.38199L12 11.8825L21 7.38247V5H3V7.38199Z" fill="#64696C"></path>
+                        </g>
+                    </svg>
+                    <input value="{{ user.email }}" required class="p" type="email" placeholder="info@lemfoods.md" id="email" name="email">
+                </div>
+            </div>
+            <div class="popup__section popup__section_phone-number">
+                <label for="phone-number" class="p">Телефон</label>
+                <div class="popup__input">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.5">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8565 8.33802C11.3746 7.63981 11.5604 6.90396 10.9744 6.25443C9.65949 4.41445 8.77515 3.27662 8.22044 2.72866C7.16589 1.68693 5.43112 1.82784 4.51779 2.72777C4.02723 3.21113 3.86116 3.37712 3.35747 3.88873C0.551816 6.69589 2.26285 12.6301 6.81139 17.1831C11.3589 21.7351 17.2926 23.4471 20.1041 20.634C20.5689 20.1859 20.9624 19.7921 21.2728 19.4641C22.1678 18.5181 22.3037 16.8598 21.2669 15.7825C20.7354 15.2302 19.6503 14.3886 17.7329 13.0171C17.1457 12.492 16.4494 12.6058 15.811 13.0246C15.504 13.226 15.2805 13.4298 14.8585 13.8522L14.0923 14.6188C13.9914 14.7198 12.621 14.0335 11.2907 12.702C9.95972 11.3697 9.2739 9.99918 9.37435 9.89874L10.1411 9.13155C10.275 8.99754 10.339 8.93266 10.4211 8.84639C10.5921 8.66666 10.7337 8.50356 10.8565 8.33802ZM15.5057 16.0331L16.2721 15.2662C16.5044 15.0338 16.6549 14.8909 16.7773 14.7923C18.457 15.9985 19.4297 16.757 19.8271 17.1698C20.0656 17.4177 20.0286 17.87 19.8212 18.0892C19.5342 18.3925 19.1613 18.7656 18.7037 19.2069C16.8857 21.0257 12.0959 19.6438 8.22513 15.7692C4.35315 11.8934 2.97188 7.10291 4.7762 5.29761C5.27786 4.7881 5.4368 4.62924 5.92035 4.15278C6.10166 3.97413 6.59552 3.93401 6.81608 4.15189C7.24314 4.57376 8.03534 5.58811 9.20071 7.21145C9.14038 7.28635 9.06503 7.37099 8.97333 7.46737C8.90603 7.5381 8.84996 7.59494 8.72738 7.71764L7.96136 8.48408C6.65821 9.78712 7.76802 12.0048 9.87697 14.1159C11.9845 16.2254 14.203 17.3365 15.5057 16.0331Z" fill="#64696C"></path>
+                        </g>
+                    </svg>
+                    <input value="{{ user.phone_number }}" required class="p" type="tel" placeholder="373 (##) ### ###" id="phone-number" name="phone-number" readonly>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 success-phone">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="popup__section">
+                <label for="date" class="p">Дата рождения</label>
+                <div class="popup__input">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11 22C4.92487 22 0 17.0751 0 11C0 4.92487 4.92487 0 11 0C17.0751 0 22 4.92487 22 11C22 17.0751 17.0751 22 11 22ZM18.3995 16.1246C19.4086 14.6703 20 12.9042 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 12.9042 2.59138 14.6703 3.6005 16.1246C4.72595 14.6381 7.3706 14 11 14C14.6294 14 17.274 14.6381 18.3995 16.1246ZM16.9647 17.7398C16.672 16.6874 14.5694 16 11 16C7.43062 16 5.328 16.6874 5.03532 17.7398C6.6233 19.1462 8.71194 20 11 20C13.2881 20 15.3767 19.1462 16.9647 17.7398ZM11 14C8.76086 14 7 12.4274 7 9C7 6.75576 8.5791 5 11 5C13.4142 5 15 6.92158 15 9.2C15 12.4796 13.2181 14 11 14ZM9 9C9 11.2693 9.81821 12 11 12C12.1777 12 13 11.2984 13 9.2C13 7.95042 12.2157 7 11 7C9.73374 7 9 7.81582 9 9Z" fill="#64696C"></path>
+                    </svg>
+                    <input value="{{ user.birth_date }}" required class="p" type="text" id="date" name="date" readonly>
+                </div>
+            </div>
+            <nav class="popup__nav">
+                <button type="submit">Изменить</button>
+            </nav>
+        </div>
+        <div class="profile-data__section-favorite hidden">
+            
+        </div>
+        <div class="profile-data__section-bought hidden">
+           
+        </div>
+    </form>
+{% endblock content %}

@@ -9,10 +9,15 @@
     --color4: #B1B3B5;
     --color5: #F2F4F6;
     --color6: #64696C;
+    --color7: #3c3636cf;
 }
 
-.big, .p { 
+.big, .p, .very-big, .medium { 
     font-family: "Albert Sans", Helvetica, sans-serif;
+}
+.very-big {
+    font-size: 30px;
+	font-weight: 400;
 }
 .big {
     font-size: 22px;

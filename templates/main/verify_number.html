@@ -1,0 +1,8 @@
+{% extends "main/main.html" %}
+
+{% block title %}Подтверждение номера{% endblock title %}
+
+{% block content %}
+    {% set not_popup=True %}
+    {% include "main/component/popup_veirify_number.html" %}
+{% endblock content %}
