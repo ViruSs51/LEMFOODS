@@ -113,7 +113,7 @@ def verify_number():
                     .services(settings.VERIFY_SERVICE_SID) \
                     .verification_checks \
                     .create(to=session.get('phone_number'), code=code)
-                
+
                 if verification_check.status == 'approved' and ((session.get('auth_type') == 'login' and user_by_phone) or session.get('auth_type') == 'signup'):  
                 #if True and ((session.get('auth_type') == 'login' and user_by_phone) or session.get('auth_type') == 'signup'): 
                     if not user_by_phone:
