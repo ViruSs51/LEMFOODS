@@ -1,6 +1,6 @@
 from flask import session
 import db
-
+from random import choices
 
 def get_user():
     return {
@@ -12,7 +12,3 @@ def get_user():
         'birth_date': session.get('birthday'),
         'connected': session.get('logged_in')
     }
-
-def get_products():
-    categories = db.get_categories()
-    
