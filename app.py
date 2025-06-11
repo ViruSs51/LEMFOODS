@@ -14,7 +14,6 @@ email_service = auth.init_service(client_secrets_file='data/client_secret_620369
 
 @app.route('/')
 def home_page():
-    #print(db.get_categories())
     return render_template('main/home.html', user=get_user())
 
 @app.route('/catalog')
@@ -60,8 +59,6 @@ def verify_email():
 
         auth_type = 'signup' if first_name and last_name and email and phone_number and birthday and privacy_policy else 'login'
 
-        print(auth_type)
-
         if not phone_number: phone_number = session.get('phone_number')
         if not email: email = session.get('email')
 
@@ -106,7 +103,6 @@ def verify_email():
             if user_by_phone: session['id'] = user_by_phone[0]
 
             try:
-                print("Sending")
                 # Send verification code
                 auth_code = auth.generate_auth_code()
                 msg = auth.generate_verification_message(
@@ -298,7 +294,6 @@ def verify_number():
                     return render_template('main/verify_number.html', error_message='Invalid code!', user=get_user())
 
             except Exception as e:
-                print(e)
                 message = {
                     'error': True,
                     'msg': 'Internal Error!'
@@ -335,7 +330,6 @@ def profile():
             email=email,
             id=id
         )
-        print(update_user)
 
         if not update_user:
             return render_template('main/profile.html', error_message='You were not allowed to edit your account details!', user=get_user())
